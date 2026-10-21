@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+*.tmp
+
+# 二进制产物只走 GitHub Releases，不进仓库树（与上游一致）
+releases/*.ipa
+releases/*.sha256
