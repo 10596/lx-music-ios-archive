@@ -1,0 +1,54 @@
+name: 侵权通知
+description: 权利人认为本仓库内容侵犯其合法权益时使用
+title: "[侵权通知] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        本通道供权利人提交侵权通知。请按下列各项完整填写。
+
+        收到符合法定要求的有效通知后，本仓库将及时处理（删除相关内容或停止分发）。
+        本通道的设置仅为便于沟通，**不构成对任何责任的自认，亦不构成对法定抗辩权的放弃**。
+
+  - type: textarea
+    id: rights
+    attributes:
+      label: 权利证明
+      description: 请说明主张的权利类型（著作权／商标权／其他），并提供权属证明或授权文件
+      placeholder: 权利类型、作品名称、登记号或权属说明
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: 涉嫌侵权内容的位置
+      description: 具体到文件路径、Release 标签或 URL
+      placeholder: 例如：Releases / v1.9.1-v28 中的 xxx.ipa
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 侵权说明
+      description: 请说明涉嫌侵权的事实与理由
+    validations:
+      required: true
+
+  - type: input
+    id: contact
+    attributes:
+      label: 联系方式
+      description: 邮箱或其他可联系的渠道
+      placeholder: name@example.com
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: statement
+    attributes:
+      label: 真实性声明
+      options:
+        - label: 本人保证上述通知内容真实、准确，并愿意承担因通知不实所产生的相应责任。
+          required: true

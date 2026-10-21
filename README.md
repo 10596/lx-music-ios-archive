@@ -4,13 +4,60 @@
 
 **一个基于 React Native 开发的音乐软件 —— 的 iOS 侧载构建存档**
 
-[![Release](https://img.shields.io/github/v/release/10596/lx-music-ios-archive?label=release)](../../releases)
-[![License](https://img.shields.io/github/license/10596/lx-music-ios-archive?label=license)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/10596/lx-music-ios-archive?label=release&color=2ea44f)](../../releases)
+[![License](https://img.shields.io/github/license/10596/lx-music-ios-archive?label=license&color=blue)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-iOS%2015%2B-000000?logo=apple&logoColor=white)](#)
 [![Upstream](https://img.shields.io/badge/upstream-v1.9.1-informational)](https://github.com/lyswhut/lx-music-mobile)
 [![Not Official](https://img.shields.io/badge/官方版本-否-critical)](#一说明)
 
 </div>
+
+> [!WARNING]
+> **本仓库不是官方发布。** 与上游 LX Music 移动版项目及其作者**无隶属、无合作、无授权、无背书**关系。
+> 本仓库只分发一个编译产物（IPA），不含源码、补丁、构建脚本或开发文档。
+
+<table>
+<tr>
+<td align="center" width="25%">
+
+**当前版本**
+
+`v1.9.1-v28`
+
+</td>
+<td align="center" width="25%">
+
+**上游基线**
+
+`v1.9.1`
+
+</td>
+<td align="center" width="25%">
+
+**平台**
+
+iOS 15.0+ · arm64
+
+</td>
+<td align="center" width="25%">
+
+**签名**
+
+未签名 · 需自签
+
+</td>
+</tr>
+</table>
+
+<p align="center">
+<a href="#一说明">说明</a> ·
+<a href="#二下载">下载</a> ·
+<a href="#三安装">安装</a> ·
+<a href="#四包内含有的适配">适配</a> ·
+<a href="#五常见问题">常见问题</a> ·
+<a href="#六项目协议">项目协议</a> ·
+<a href="#七致谢">致谢</a>
+</p>
 
 ---
 
@@ -29,20 +76,25 @@
 
 - **`v1.9.1-v28`** —— 上游 v1.9.1 基线 + 本仓库第 28 号构建
 
+### 本包与上游的关系
+
+| | 上游 LX Music 移动版 | 本仓库 |
+| :--- | :--- | :--- |
+| **维护方** | `lyswhut` 及贡献者 | 第三方，无关联 |
+| **支持平台** | Android 5 及以上 | iOS 15.0+ |
+| **iOS 计划** | **明确表示暂无计划** | 本包为自行构建 |
+| **分发内容** | 源码 + 安装包 | **仅 IPA**，不含源码 |
+| **许可** | Apache-2.0 | 同左，附修改声明 |
+
 > ***注：上游 [LX Music 移动版](https://github.com/lyswhut/lx-music-mobile) 明确表示目前没有计划支持 iOS**。
 > 本仓库的 iOS 安装包为第三方自行构建，**与上游项目及其作者无关**，未获其授权、认可或背书。*
 >
 > *桌面版项目地址：<https://github.com/lyswhut/lx-music-desktop>*
 
-**本仓库只分发一个编译产物（IPA），不包含源码、补丁、构建脚本或开发文档。**
+软件变化请查看[更新日志](CHANGELOG.md)　｜　软件下载请查看 [Releases](../../releases)　｜　常见问题见[下方](#五常见问题)或上游的[移动版常见问题](https://lyswhut.github.io/lx-music-doc/mobile/faq)
 
-软件变化请查看[更新日志](CHANGELOG.md)。
-
-软件下载请查看本仓库 [Releases](../../releases)。
-
-使用常见问题请参阅下方[常见问题](#五常见问题)，或上游的[移动版常见问题](https://lyswhut.github.io/lx-music-doc/mobile/faq)。
-
-> **本仓库不是原始发布地址**。LX Music 的原始发布地址只有上游 [GitHub](https://github.com/lyswhut/lx-music-mobile/releases)。本仓库属第三方转载性质的构建存档，与上游无关。
+> [!IMPORTANT]
+> **本仓库不是原始发布地址**。LX Music 的原始发布地址只有上游 [GitHub](https://github.com/lyswhut/lx-music-mobile/releases)。本仓库属第三方构建存档，与上游无关。
 
 为提高使用门槛，本软件内的默认设置、UI 操作不以新手友好为目标，使用前建议先按喜好浏览调整一遍软件设置，并阅读一遍[音乐播放列表机制](https://lyswhut.github.io/lx-music-doc/mobile/faq/playlist)。
 
@@ -86,7 +138,8 @@ f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
 
 ## 三、安装
 
-> **本包为未签名（unsigned）构建，无法直接双击安装，必须自行签名。**
+> [!NOTE]
+> 本包为**未签名（unsigned）构建**，无法直接双击安装，必须自行签名。
 
 | 方式 | 适用 | 说明 |
 | :--- | :--- | :--- |
@@ -106,7 +159,7 @@ f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
 
 | 事项 | 说明与风险 |
 | :--- | :--- |
-| **未签名构建** | 安装包没有代码签名，无法从机制上防止被二次打包或篡改。**请只认本仓库 Releases 的附件，并用下方 SHA256 校验**；第三方渠道流传的同名包无法保证一致性。 |
+| **未签名构建** | 安装包没有代码签名，无法从机制上防止被二次打包或篡改。**请只认本仓库 Releases 的附件，并用上方 SHA256 校验**；第三方渠道流传的同名包无法保证一致性。 |
 | **允许明文传输** | 为兼容部分音源，应用放宽了 iOS 的传输安全限制（ATS 全放行），**允许非加密的 HTTP 连接**。这意味着在不信任的网络（公共 Wi-Fi 等）下，流量存在被监听或篡改的可能。 |
 | **Bundle ID 与上游相同** | 该标识并非本仓库独占，他人理论上可冒用同一标识分发仿冒包，本仓库无法阻止。**校验 SHA256 是唯一可靠的辨别方式。** |
 | **自定义源** | 音源由使用者自行配置，其安全性、稳定性与合法性由使用者自行判断，本仓库不作任何保证。 |
@@ -137,38 +190,38 @@ f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
 <details>
 <summary><b>安装后提示"无法验证 App"怎么办？</b></summary>
 
-进入 **设置 → 通用 → VPN与设备管理 → 开发者 App**，选择对应证书并点击"信任"。
+<br>进入 **设置 → 通用 → VPN与设备管理 → 开发者 App**，选择对应证书并点击"信任"。
 </details>
 
 <details>
 <summary><b>为什么每 7 天就要重新签名？</b></summary>
 
-使用免费 Apple ID 签名时，证书有效期为 7 天，这是 Apple 的限制，与本安装包无关。
+<br>使用免费 Apple ID 签名时，证书有效期为 7 天，这是 Apple 的限制，与本安装包无关。
 使用付费开发者账号可延长至 1 年。
 </details>
 
 <details>
 <summary><b>能装在我的 iPad 上吗？</b></summary>
 
-安装包只声明支持 iPhone（`UIDeviceFamily = 1`）。iPad 上会以兼容模式运行，界面布局未做适配，**不保证可用**。
+<br>安装包只声明支持 iPhone（`UIDeviceFamily = 1`）。iPad 上会以兼容模式运行，界面布局未做适配，**不保证可用**。
 </details>
 
 <details>
 <summary><b>为什么不能和官方版同时安装？</b></summary>
 
-两者使用相同的 Bundle ID（`cn.toside.music.mobile`），iOS 会认为是同一个应用的冲突版本。
+<br>两者使用相同的 Bundle ID（`cn.toside.music.mobile`），iOS 会认为是同一个应用的冲突版本。
 </details>
 
 <details>
 <summary><b>会持续更新吗？</b></summary>
 
-本仓库为**存档性质，不承诺更新**。
+<br>本仓库为**存档性质，不承诺更新**。
 </details>
 
 <details>
 <summary><b>为什么不提供源码和构建脚本？</b></summary>
 
-出于对上游作者权益的尊重，本仓库只分发编译产物。源码请直接访问[上游仓库](https://github.com/lyswhut/lx-music-mobile)。
+<br>出于对上游作者权益的尊重，本仓库只分发编译产物。源码请直接访问[上游仓库](https://github.com/lyswhut/lx-music-mobile)。
 </details>
 
 ---
@@ -240,7 +293,7 @@ f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
 ---
 
 > 若对此有疑问，请通过 [Issues](../../issues) 联系。
-> 依据 Apache License 2.0 第 4 条作出的**修改声明**见 [`NOTICE`](NOTICE)；完整免责声明见 [`DISCLAIMER.md`](DISCLAIMER.md)。
+> 依据 Apache License 2.0 第 4 条作出的**修改声明**见 [`NOTICE`](NOTICE)；完整免责声明见 [`DISCLAIMER.md`](DISCLAIMER.md)；安全说明见 [`SECURITY.md`](SECURITY.md)。
 
 ---
 
@@ -291,8 +344,8 @@ f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
 
 <div align="center">
 
-**本仓库为个人技术存档，请合理使用。**
+**个人技术存档 · 请合理使用**
 
-<sub>最后更新：2026-10-21 ｜ 版本 v1.9.1-v28 ｜ 上游基线 v1.9.1</sub>
+<sub>最后更新 2026-10-21 ｜ 版本 v1.9.1-v28 ｜ 上游基线 v1.9.1</sub>
 
 </div>

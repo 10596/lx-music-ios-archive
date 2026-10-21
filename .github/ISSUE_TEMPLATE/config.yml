@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 上游项目 Issues（软件功能问题）
+    url: https://github.com/lyswhut/lx-music-mobile/issues
+    about: 与本安装包无关的功能性问题，请向上游项目反馈
+  - name: 上游使用文档
+    url: https://lyswhut.github.io/lx-music-doc/mobile/faq
+    about: 移动版常见问题与播放列表机制说明
