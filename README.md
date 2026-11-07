@@ -7,7 +7,7 @@
 [![Release](https://img.shields.io/github/v/release/10596/lx-music-ios-archive?label=release&color=2ea44f)](../../releases)
 [![License](https://img.shields.io/github/license/10596/lx-music-ios-archive?label=license&color=blue)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-iOS%2015%2B-000000?logo=apple&logoColor=white)](#)
-[![Upstream](https://img.shields.io/badge/upstream-v1.9.1-informational)](https://github.com/lyswhut/lx-music-mobile)
+[![Upstream](https://img.shields.io/badge/upstream-v1.9.2-informational)](https://github.com/lyswhut/lx-music-mobile)
 [![Not Official](https://img.shields.io/badge/官方版本-否-critical)](#一说明)
 
 </div>
@@ -22,14 +22,14 @@
 
 **当前版本**
 
-`v1.9.1-v28`
+`v1.9.2-v5`
 
 </td>
 <td align="center" width="25%">
 
 **上游基线**
 
-`v1.9.1`
+`v1.9.2`
 
 </td>
 <td align="center" width="25%">
@@ -74,7 +74,8 @@ iOS 15.0+ · arm64
 
 当前版本：
 
-- **`v1.9.1-v28`** —— 上游 v1.9.1 基线 + 本仓库第 28 号构建
+- **`v1.9.2-v5`** —— 上游 v1.9.2 基线 + 本代第 5 次迭代构建
+- 上一版：**`v1.9.1-v28`**（上游 v1.9.1 基线，第 28 次迭代后通过真机验证）
 
 ### 本包与上游的关系
 
@@ -106,33 +107,37 @@ iOS 15.0+ · arm64
 
 | 版本 | 说明 | 状态 |
 | :---: | :--- | :---: |
-| [**v1.9.1-v28**](../../releases/tag/v1.9.1-v28) | 基于上游 v1.9.1 的 iOS 构建 | ✅ 当前版本 |
+| [**v1.9.2-v5**](../../releases/tag/v1.9.2-v5) | 基于上游 v1.9.2 的 iOS 构建，修复锁屏与详情页显示问题 | ✅ 当前版本 |
+| [v1.9.1-v28](../../releases/tag/v1.9.1-v28) | 基于上游 v1.9.1 的 iOS 构建 | 上一版 · 回退基线 |
 
 > 安装包以 Release 附件形式分发，仓库树中不保存二进制文件。
 
 ### 版本号怎么读
 
 ```
-v1.9.1 - v28
-  │        └── 本仓库构建序号
-  └─────────── 上游基线版本
+v1.9.2 - v5
+  │       └── 本代迭代序号
+  └────────── 上游基线版本
 ```
 
-例：`v1.9.1-v28` = 基于上游 **v1.9.1** 构建，本仓库第 **28** 号构建产物。
-构建序号仅用于区分产物，**不代表功能版本，也不代表发布次数**。
+例：`v1.9.2-v5` = 基于上游 **v1.9.2** 构建、本代第 **5** 次迭代产物；上一版 `v1.9.1-v28` 则是在 **v1.9.1** 上迭代 28 次后通过真机验证的产物。
+构建序号仅用于区分产物，**不代表功能版本，也不代表发布次数**；序号按上游版本重新计数，因此 `v1.9.2-v5` 表示 v1.9.2 基线的第 5 次迭代，与 v1.9.1 的 28 次不连续。
 
 ### 完整性校验
 
+当前版本 `v1.9.2-v5`：
+
 ```bash
-shasum -a 256 -c LxMusicMobile-1.9.1-ios-v28.ipa.sha256
-# 期望输出：LxMusicMobile-1.9.1-ios-v28.ipa: OK
+shasum -a 256 -c LxMusicMobile-v1.9.2-v5.ipa.sha256
+# 期望输出：LxMusicMobile-v1.9.2-v5.ipa: OK
 ```
 
-SHA256 指纹：
+| 版本 | SHA256 |
+| :--- | :--- |
+| **v1.9.2-v5**（当前） | `b08653cbfd6444b9117610d48be5c62fc156fd2af7240525a6695c8fd34367c3` |
+| v1.9.1-v28（上一版） | `f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a` |
 
-```
-f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
-```
+> 旧版本附件已统一命名为 `LxMusicMobile-v1.9.1-v28.ipa`；若持有更早下载的同名旧文件，请以哈希为准。
 
 ---
 
@@ -180,6 +185,10 @@ f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
 | **网络层** | 修正 App Transport Security 配置，放行明文音源并正确排除内网地址 |
 | **界面适配** | 适配 iOS 安全区、全面屏边距、歌单页返回导航 |
 | **歌词** | 恢复歌词显示，支持双语与音译开关 |
+| **锁屏封面** | 封面更新后同步到锁屏；支持以 `//` 开头的封面地址 |
+| **锁屏控制** | 进度条可正常拖动，暂停与上下曲响应恢复正常 |
+| **切歌与起播** | 缩短锁屏切歌后的出声延迟，去掉冗余起播调用 |
+| **详情页封面** | 打开歌曲详情页即显示当前封面，不再空白或残留上一首 |
 
 > 修改细节遵循上游 `LICENSE` 约束，全部改动已在 [`NOTICE`](NOTICE) 中声明。
 
@@ -346,6 +355,6 @@ f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
 
 **个人技术存档 · 请合理使用**
 
-<sub>最后更新 2026-10-21 ｜ 版本 v1.9.1-v28 ｜ 上游基线 v1.9.1</sub>
+<sub>最后更新 2026-11-07 ｜ 版本 v1.9.2-v5 ｜ 上游基线 v1.9.2</sub>
 
 </div>

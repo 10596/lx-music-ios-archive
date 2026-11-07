@@ -6,11 +6,12 @@
 
 ## 一、支持的版本
 
-本仓库目前只发布一个版本：
+本仓库目前发布以下版本：
 
 | 版本 | 状态 |
 | :---: | :--- |
-| `v1.9.1-v28` | 当前版本 |
+| `v1.9.2-v5` | 当前版本 |
+| `v1.9.1-v28` | 上一版 · 回退基线 |
 
 本仓库为**存档性质，不承诺更新**。历史版本不作安全维护。
 
@@ -69,20 +70,21 @@
 从本仓库 Releases 下载 IPA 与同名 `.sha256` 文件，放在同一目录后执行：
 
 ```bash
-shasum -a 256 -c LxMusicMobile-1.9.1-ios-v28.ipa.sha256
+shasum -a 256 -c LxMusicMobile-v1.9.2-v5.ipa.sha256
 ```
 
 期望输出：
 
 ```
-LxMusicMobile-1.9.1-ios-v28.ipa: OK
+LxMusicMobile-v1.9.2-v5.ipa: OK
 ```
 
 ### 3.2 当前版本指纹
 
-```
-f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
-```
+| 版本 | SHA256 |
+| :--- | :--- |
+| **v1.9.2-v5**（当前） | `b08653cbfd6444b9117610d48be5c62fc156fd2af7240525a6695c8fd34367c3` |
+| v1.9.1-v28（上一版） | `f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a` |
 
 > 校验值只在本仓库 README 与 Release 说明中公布。若他处给出不同指纹，请以本仓库为准。
 
@@ -91,7 +93,7 @@ f1d26dd2efe600c1e0eeb55d700fc4f9daadc37bcb131cce454b5426389fa96a
 下载后可确认包内不含异常文件：
 
 ```bash
-unzip -l LxMusicMobile-1.9.1-ios-v28.ipa | head -30
+unzip -l LxMusicMobile-v1.9.2-v5.ipa | head -30
 ```
 
 正常情况下应只包含 `Payload/LxMusicMobile.app/` 及其资源与 `hermes.framework`。

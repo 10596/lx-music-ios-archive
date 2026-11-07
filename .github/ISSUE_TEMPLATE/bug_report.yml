@@ -16,8 +16,8 @@ body:
     id: version
     attributes:
       label: 版本
-      description: 见 Release 标签，例如 v1.9.1-v28
-      placeholder: v1.9.1-v28
+      description: 见 Release 标签，例如 v1.9.2-v5
+      placeholder: v1.9.2-v5
     validations:
       required: true
 
